@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="EFNorthwindApp.Orders">
+    <Position X="4.5" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>GAEAAABAAAAIAAAAABAAICABCAAEAhBAAAAEAAACACA=</HashCode>
+      <FileName>Orders.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Employee" />
+      <Property Name="Customer" />
+      <Property Name="ShipViaNavigation" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EFNorthwindApp.Customers">
+    <Position X="0.5" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAEAQAAAgAAAAAAIIAAgAAAAAAIAABACAAACIAAEAAA=</HashCode>
+      <FileName>Customers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EFNorthwindApp.Employees">
+    <Position X="0.5" Y="5.25" Width="3.5" />
+    <AssociationLine Name="ReportsToNavigation" Type="EFNorthwindApp.Employees" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.741" Y="10.651" />
+        <Point X="1.741" Y="10.901" />
+        <Point X="2.812" Y="10.901" />
+        <Point X="2.812" Y="10.651" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAEgAEAAoAAAAGRIIAAAAAQAACIAAYACAIAAAAgCAAg=</HashCode>
+      <FileName>Employees.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ReportsToNavigation" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EFNorthwindApp.Products">
+    <Position X="11.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>MEAAAAAAAAAAAoAAABAAQAAAAAEAAAAAAAAAAAgoCAA=</HashCode>
+      <FileName>Products.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Category" />
+      <Property Name="Supplier" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EFNorthwindApp.Suppliers">
+    <Position X="15" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAEgAAAAAAIIAAgAAAAAAIAAAACAAACIAAgAAQ=</HashCode>
+      <FileName>Suppliers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EFNorthwindApp.EmployeeTerritories">
+    <Position X="5.25" Y="8.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEgCAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>EmployeeTerritories.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Territory" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EFNorthwindApp.Categories">
+    <Position X="8.5" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAgAgAAAAAAAAAAACAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Categories.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EFNorthwindApp.Territories">
+    <Position X="9" Y="7" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAgAAAAAAIAAAAAAUAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Territories.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Region" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EFNorthwindApp.OrderDetails">
+    <Position X="7.75" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>MAECAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAgAAAAAA=</HashCode>
+      <FileName>OrderDetails.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Order" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EFNorthwindApp.Region">
+    <Position X="12.75" Y="6.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAABAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Region.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EFNorthwindApp.Shippers">
+    <Position X="5.25" Y="5.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAEAQAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Shippers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
