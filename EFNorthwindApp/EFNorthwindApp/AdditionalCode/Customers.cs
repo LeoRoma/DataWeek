@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 
-namespace EFNorthwindApp.AdditionalCode
+namespace EFNorthwindApp
 {
     public partial class Customers
     {
-        //public override string ToString()
-        //{
-        //    return $"{CustomerId}, - {ContactName} - {City}";
-        //}
+        public override string ToString()
+        {
+            return $"{CustomerId}, - {ContactName} - {City}";
+        }
 
     }
 }
