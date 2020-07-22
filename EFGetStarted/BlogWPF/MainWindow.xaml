@@ -26,10 +26,13 @@
         <Label x:Name="LabelHeader" Content="Blog Manager" FontWeight="Bold" FontSize="35"
                Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalContentAlignment="Center"
                VerticalContentAlignment="Center" Background="Gray" />
+        <!--ListBox-->
+        <ListBox x:Name="ListBoxCustomer" Background="Beige"  Grid.Row="1" Grid.Column="2" SelectionChanged="ListBoxCustomer_SelectionChanged">
+        </ListBox>
         <!--Display-->
-        <Label x:Name="LabelDisplay" Content="" FontSize="20"
+        <!--<Label x:Name="LabelDisplay" Content="" FontSize="20"
                Grid.Row="1" Grid.Column="2" Grid.RowSpan="4" HorizontalContentAlignment="Right"
-               VerticalContentAlignment="Center" Background="White" Padding="0 0 30 0" />
+               VerticalContentAlignment="Center" Background="White" Padding="0 0 30 0" />-->
         <!--TextBox-->
         <Label Content="Enter some text" Margin="5" Grid.Row="1" FontSize="35"/>
         <TextBox Grid.Row="1" Grid.Column="1" Name="MyTextBox" Margin="5"/>

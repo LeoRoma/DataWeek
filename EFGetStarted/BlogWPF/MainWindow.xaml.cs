@@ -26,6 +26,7 @@ namespace BlogWPF
         public MainWindow()
         {
             InitializeComponent();
+            PopulateListBox();
         }
 
         private void ButtonAdd_Click(object sender, RoutedEventArgs e)
@@ -33,12 +34,12 @@ namespace BlogWPF
             string userInput = MyTextBox.Text;
             _bm.Add(userInput);
             MyTextBox.Clear();
-            LabelDisplay.Content = _bm.Read();
+            ListBoxCustomer.ItemsSource = _bm.Read();
         }
 
         private void ButtonRead_Click(object sender, RoutedEventArgs e)
         {
-            LabelDisplay.Content = _bm.Read();
+            ListBoxCustomer.ItemsSource = _bm.Read();
         }
 
         private void ButtonDelete_Click(object sender, RoutedEventArgs e)
@@ -46,8 +47,38 @@ namespace BlogWPF
             string userInput = MyTextBox.Text;
             _bm.Delete(userInput);
             MyTextBox.Clear();
-            LabelDisplay.Content = _bm.Read();
+            ListBoxCustomer.ItemsSource = _bm.Read();
         }
 
+        private void PopulateListBox()
+        {
+            ListBoxCustomer.ItemsSource = _bm.Read();
+        }
+
+        private void ListBoxCustomer_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            if (ListBoxCustomer.SelectedItem != null)
+            {
+                _bm.SetSelectedCustomer(ListBoxCustomer.SelectedItem);
+                PopulateCustomerFields();
+            }
+        }
+
+        private void PopulateCustomerFields()
+        {
+            if (_bm.SelectedCustomer != null)
+            {
+                //TextId.Text = _crudManager.SelectedCustomer.CustomerId;
+                //TextName.Text = _crudManager.SelectedCustomer.ContactName;
+                //TextCity.Text = _crudManager.SelectedCustomer.City;
+                //TextPostalCode.Text = _crudManager.SelectedCustomer.PostalCode;
+                //TextCountry.Text = _crudManager.SelectedCustomer.Country;
+            }
+        }
+
+        private void ButtonUpdate_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -7,6 +7,7 @@ namespace BlogApp
 {
     public class BlogManager
     {
+        public Blog SelectedCustomer { get; set; }
         public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
@@ -24,23 +25,25 @@ namespace BlogApp
         }
 
         //Read
-        public string Read()
+        public List<Blog> Read()
         {
             using (var db = new BloggingContext())
             {
-                string blogList = "";
+                List<Blog> blogList = new List<Blog>();
                 Console.WriteLine("Querying for a blog");
-                var blogs =
-                    from blog in db.Blogs.OrderBy(b => b.BlogId)
-                    select blog;
+                //var blogs =
+                //   from blog in db.Blogs.OrderBy(b => b.BlogId)
+                //   join post in db.Posts on blog.BlogId equals post.BlogId
+                //   select blog;
+                   //select new { blogUrl = blog.Url, postTitle = post.Title, postContent = post.Content };
                 //var blog = db.Blogs
                 //    .OrderBy(b => b.BlogId)
                 //    .First();
-                foreach(var blog in blogs)
-                {
-                    blogList += $"{blog.Url}\n";
-                }
-                return blogList;
+                //foreach (var blog in blogs)
+                //{
+                //    blogList.Add(blog.Url).ToList();
+                //}
+                return db.Blogs.ToList();
                 
             }
         }
@@ -81,6 +84,11 @@ namespace BlogApp
                     });
                 db.SaveChanges();
             }
+        }
+
+        public void SetSelectedCustomer(object selectedItem)
+        {
+            SelectedCustomer = (Blog)selectedItem;
         }
     }
 }

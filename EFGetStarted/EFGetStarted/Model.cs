@@ -14,7 +14,7 @@ namespace EFGetStarted
             => options.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=Blogging;"); //Creates a DB with migrations
     }
 
-    public class Blog
+    public partial class Blog
     {
         public int BlogId { get; set; }
         public string Url { get; set; }
