@@ -51,7 +51,7 @@ namespace EFNorthwindApp
                 //    from customer in db.Customers
                 //    select customer;
 
-                //foreach(var customer in allCustomersParisLondon)
+                //foreach (var customer in allCustomersParisLondon)
                 //{
                 //    if (customer.City == "London" || customer.City == "Paris")
                 //        Console.WriteLine($"{customer.CompanyName}, {customer.Address}, {customer.City}, {customer.PostalCode}, {customer.Country}");
@@ -159,13 +159,15 @@ namespace EFNorthwindApp
                 //}
 
                 //1.5 Method
-                var employees =
-                    from employee in db.Employees.Where(e => e.City == "London")
-                    select employee;
-                foreach (var employee in employees)
-                {
-                    Console.WriteLine($"{ employee.TitleOfCourtesy} {employee.FirstName} {employee.LastName}, {employee.City}");
-                }
+                //var employees =
+                //    from employee in db.Employees.Where(e => e.City == "London")
+                //    select employee;
+                //foreach (var employee in employees)
+                //{
+                //    Console.WriteLine($"{ employee.TitleOfCourtesy} {employee.FirstName} {employee.LastName}, {employee.City}");
+                //}
+
+                //1.6
 
             }
 
