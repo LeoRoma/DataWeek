@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFGetStarted", "EFGetStarted\EFGetStarted.csproj", "{7695E14C-8CFE-418A-9155-9BC0F9FA3532}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFGetStarted", "EFGetStarted\EFGetStarted.csproj", "{7695E14C-8CFE-418A-9155-9BC0F9FA3532}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogApp", "BlogApp\BlogApp.csproj", "{6A86D4E0-D234-4B2B-83A8-F9BB3084B7C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogWPF", "BlogWPF\BlogWPF.csproj", "{EAD350B1-DADF-449F-ADE5-9046B2523D47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{7695E14C-8CFE-418A-9155-9BC0F9FA3532}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7695E14C-8CFE-418A-9155-9BC0F9FA3532}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7695E14C-8CFE-418A-9155-9BC0F9FA3532}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A86D4E0-D234-4B2B-83A8-F9BB3084B7C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A86D4E0-D234-4B2B-83A8-F9BB3084B7C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A86D4E0-D234-4B2B-83A8-F9BB3084B7C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A86D4E0-D234-4B2B-83A8-F9BB3084B7C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAD350B1-DADF-449F-ADE5-9046B2523D47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAD350B1-DADF-449F-ADE5-9046B2523D47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAD350B1-DADF-449F-ADE5-9046B2523D47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAD350B1-DADF-449F-ADE5-9046B2523D47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,50 @@
+﻿<Window x:Class="BlogWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BlogWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+          
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--Header-->
+        <Label x:Name="LabelHeader" Content="Blog Manager" FontWeight="Bold" FontSize="35"
+               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Center" Background="Gray" />
+        <!--Display-->
+        <Label x:Name="LabelDisplay" Content="" FontSize="20"
+               Grid.Row="1" Grid.Column="2" Grid.RowSpan="4" HorizontalContentAlignment="Right"
+               VerticalContentAlignment="Center" Background="White" Padding="0 0 30 0" />
+        <!--TextBox-->
+        <Label Content="Enter some text" Margin="5" Grid.Row="1" FontSize="35"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Name="MyTextBox" Margin="5"/>
+
+        <!--Button Add-->
+        <Button x:Name="ButtonAdd" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1" Background="Green" FontWeight="Bold" FontSize="35" Content="Add"
+               VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ButtonAdd_Click" />
+        <!--Button Read-->
+        <Button x:Name="ButtonRead" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="1" Background="DarkGray" FontWeight="Bold" FontSize="35" Content="Read"
+               VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ButtonRead_Click" />
+        <!--Button Delete-->
+        <Button x:Name="ButtonDelete" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="1" Background="Red" FontWeight="Bold" FontSize="35" Content="Delete"
+               VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ButtonDelete_Click" />
+        <!--Delete-->
+        <Button x:Name="ButtonUpdate" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" Background="Yellow" FontWeight="Bold" FontSize="35" Content="Update"
+               VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ButtonDelete_Click" />
+    </Grid>
+</Window>

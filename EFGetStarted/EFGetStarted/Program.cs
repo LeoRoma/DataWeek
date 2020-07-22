@@ -40,11 +40,8 @@ namespace EFGetStarted
             //}
 
             //Add("http://h1.com");
-            //Add("http://h2.com");
-            //Add("http://h3.com");
-            Read();
-            //Update("http://h1.com");
-            Delete();
+            //Update("http://h1.com", "Hello", "How are you");
+            //Read();
 
         }
         //Create
@@ -65,20 +62,21 @@ namespace EFGetStarted
                 Console.WriteLine("Querying for a blog");
                 var blogs =
                     from blog in db.Blogs.OrderBy(b => b.BlogId)
-                    select blog;
+                    join post in db.Posts on blog.BlogId equals post.BlogId
+                    select new { blogUrl = blog.Url, postTitle = post.Title, postContent = post.Content };
                 //var blog = db.Blogs
                 //    .OrderBy(b => b.BlogId)
                 //    .First();
                 foreach(var blog in blogs)
                 {
-                    Console.WriteLine($"{blog.Url}");
+                    Console.WriteLine($"{blog.blogUrl}, {blog.postTitle}, {blog.postContent}");
                 }
                 
             }
         }
 
         //Update
-        public static void Update(string userInput)
+        public static void Update(string userInput, string title, string content)
         {
             using (var db = new BloggingContext())
             {
@@ -92,8 +90,8 @@ namespace EFGetStarted
                 blog.Posts.Add(
                     new Post
                     {
-                        Title = "Hello World",
-                        Content = "I wrote an app using EF Core!"
+                        Title = title,
+                        Content = content
                     });
                 db.SaveChanges();
             }
@@ -109,10 +107,7 @@ namespace EFGetStarted
                 var blogs =
                     from blog in db.Blogs
                     select blog;
-                foreach(var b in blogs)
-                {
-                    db.Remove(b);
-                }
+                
                 //db.Remove(blog);
                 db.SaveChanges();
             }
