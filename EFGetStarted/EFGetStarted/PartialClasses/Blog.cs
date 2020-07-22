@@ -11,4 +11,12 @@ namespace EFGetStarted
             return $"{BlogId}: {Url}";
         }
     }
+
+    public partial class Post
+    {
+        public override string ToString()
+        {
+            return $"{Title}: {Content}";
+        }
+    }
 }

@@ -26,13 +26,15 @@
         <Label x:Name="LabelHeader" Content="Blog Manager" FontWeight="Bold" FontSize="35"
                Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalContentAlignment="Center"
                VerticalContentAlignment="Center" Background="DarkOrange" />
+        
         <!--ListBoxBlogs-->
         <Label Content="Blogs:" Margin="5" Grid.Row="2" FontSize="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         <ListBox x:Name="ListBoxBlogs" Background="Beige" FontSize="20"  Grid.Row="3" Grid.Column="0" Grid.RowSpan="3" SelectionChanged="ListBoxBlogs_SelectionChanged">
         </ListBox>
+        
         <!--ListBoxPosts-->
-        <Label Content="Posts:" Margin="5" Grid.Row="2" Grid.Column="1" FontSize="35" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <ListBox x:Name="ListBoxPosts" Background="Beige"  Grid.Row="3" Grid.Column="1" Grid.RowSpan="3" SelectionChanged="ListPosts_SelectionChanged">
+        <Label Content="Posts:" Margin="5" Grid.Row="2" Grid.Column="1" FontSize="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <ListBox x:Name="ListBoxPosts" Background="Beige" FontSize="20" Grid.Row="3" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="3" SelectionChanged="ListBoxPosts_SelectionChanged">
         </ListBox>
 
         <!--TextBox-->
@@ -42,12 +44,11 @@
         <!--Button Add-->
         <Button x:Name="ButtonAdd" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1" Background="DarkKhaki" FontWeight="Bold" FontSize="35" Content="Add"
                VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ButtonAdd_Click" />
-        <!--Button Read--><!--
-        <Button x:Name="ButtonRead" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="1" Background="DarkGray" FontWeight="Bold" FontSize="35" Content="Read"
-               VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ButtonRead_Click" />-->
+       
         <!--Button Delete-->
         <Button x:Name="ButtonDelete" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="1" Background="DarkGoldenrod" FontWeight="Bold" FontSize="35" Content="Delete"
                VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ButtonDelete_Click" />
+        
         <!--Button Update-->
         <Button x:Name="ButtonEdit" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="1" Background="DarkKhaki" FontWeight="Bold" FontSize="35" Content="Edit"
                VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ButtonEdit_Click" />

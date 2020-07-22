@@ -35,19 +35,21 @@ namespace BlogWPF
             string userInput = MyTextBox.Text;
             _bm.Add(userInput);
             MyTextBox.Clear();
-            ListBoxBlogs.ItemsSource = _bm.Read();
+            ListBoxBlogs.ItemsSource = _bm.ReadBlog();
+            ListBoxPosts.ItemsSource = _bm.ReadPost();
         }
 
         private void ButtonDelete_Click(object sender, RoutedEventArgs e)
         {
             _bm.Delete();
             MyTextBox.Clear();
-            ListBoxBlogs.ItemsSource = _bm.Read();
+            ListBoxBlogs.ItemsSource = _bm.ReadBlog();
         }
 
         private void PopulateListBox()
         {
-            ListBoxBlogs.ItemsSource = _bm.Read();
+            ListBoxBlogs.ItemsSource = _bm.ReadBlog();
+            ListBoxPosts.ItemsSource = _bm.ReadPost();
         }
 
         private void ListBoxBlogs_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
@@ -59,6 +61,14 @@ namespace BlogWPF
             }
         }
 
+        private void ListBoxPosts_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            if (ListBoxBlogs.SelectedItem != null)
+            {
+                _bm.SetSelectedBlogs(ListBoxBlogs.SelectedItem);
+                PopulateCustomerFields();
+            }
+        }
         private void PopulateCustomerFields()
         {
             if (_bm.SelectedBlog != null)
@@ -76,7 +86,8 @@ namespace BlogWPF
             string userInput = MyTextBox.Text;
             _bm.Edit(userInput);
             MyTextBox.Clear();
-            ListBoxBlogs.ItemsSource = _bm.Read();
+            ListBoxBlogs.ItemsSource = _bm.ReadBlog();
+            ListBoxBlogs.ItemsSource = _bm.ReadPost();
         }
     }
 }

@@ -24,27 +24,31 @@ namespace BlogApp
             }
         }
 
-        //Read
-        public List<Blog> Read()
+        //ReadPost
+        public List<Post> ReadPost()
         {
             using (var db = new BloggingContext())
             {
-                List<Blog> blogList = new List<Blog>();
-                Console.WriteLine("Querying for a blog");
-                //var blogs =
-                //   from blog in db.Blogs.OrderBy(b => b.BlogId)
-                //   join post in db.Posts on blog.BlogId equals post.BlogId
-                //   select blog;
-                   //select new { blogUrl = blog.Url, postTitle = post.Title, postContent = post.Content };
-                //var blog = db.Blogs
-                //    .OrderBy(b => b.BlogId)
-                //    .First();
-                //foreach (var blog in blogs)
-                //{
-                //    blogList.Add(blog.Url).ToList();
-                //}
-                return db.Blogs.ToList();
-                
+                List<Post> blogList = new List<Post>();
+                var blogs =
+                   (from blog in db.Blogs.OrderBy(b => b.BlogId)
+                    join post in db.Posts on blog.BlogId equals post.BlogId
+                    select post).ToList();
+                return blogs;
+            }
+        }
+
+        //Read Blog
+        public List<Blog> ReadBlog()
+        {
+            using (var db = new BloggingContext())
+            {
+                List<Post> blogList = new List<Post>();
+                var blogs =
+                   (from blog in db.Blogs.OrderBy(b => b.BlogId)
+                    join post in db.Posts on blog.BlogId equals post.BlogId
+                    select blog).ToList();
+                return blogs;
             }
         }
 
