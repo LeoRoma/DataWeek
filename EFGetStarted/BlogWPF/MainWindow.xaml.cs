@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,39 +35,33 @@ namespace BlogWPF
             string userInput = MyTextBox.Text;
             _bm.Add(userInput);
             MyTextBox.Clear();
-            ListBoxCustomer.ItemsSource = _bm.Read();
-        }
-
-        private void ButtonRead_Click(object sender, RoutedEventArgs e)
-        {
-            ListBoxCustomer.ItemsSource = _bm.Read();
+            ListBoxBlogs.ItemsSource = _bm.Read();
         }
 
         private void ButtonDelete_Click(object sender, RoutedEventArgs e)
         {
-            string userInput = MyTextBox.Text;
-            _bm.Delete(userInput);
+            _bm.Delete();
             MyTextBox.Clear();
-            ListBoxCustomer.ItemsSource = _bm.Read();
+            ListBoxBlogs.ItemsSource = _bm.Read();
         }
 
         private void PopulateListBox()
         {
-            ListBoxCustomer.ItemsSource = _bm.Read();
+            ListBoxBlogs.ItemsSource = _bm.Read();
         }
 
-        private void ListBoxCustomer_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        private void ListBoxBlogs_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            if (ListBoxCustomer.SelectedItem != null)
+            if (ListBoxBlogs.SelectedItem != null)
             {
-                _bm.SetSelectedCustomer(ListBoxCustomer.SelectedItem);
+                _bm.SetSelectedBlogs(ListBoxBlogs.SelectedItem);
                 PopulateCustomerFields();
             }
         }
 
         private void PopulateCustomerFields()
         {
-            if (_bm.SelectedCustomer != null)
+            if (_bm.SelectedBlog != null)
             {
                 //TextId.Text = _crudManager.SelectedCustomer.CustomerId;
                 //TextName.Text = _crudManager.SelectedCustomer.ContactName;
@@ -76,9 +71,12 @@ namespace BlogWPF
             }
         }
 
-        private void ButtonUpdate_Click(object sender, RoutedEventArgs e)
+        private void ButtonEdit_Click(object sender, RoutedEventArgs e)
         {
-
+            string userInput = MyTextBox.Text;
+            _bm.Edit(userInput);
+            MyTextBox.Clear();
+            ListBoxBlogs.ItemsSource = _bm.Read();
         }
     }
 }

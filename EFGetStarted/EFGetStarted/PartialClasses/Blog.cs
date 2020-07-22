@@ -8,7 +8,7 @@ namespace EFGetStarted
     {
         public override string ToString()
         {
-            return $"{Url}";
+            return $"{BlogId}: {Url}";
         }
     }
 }

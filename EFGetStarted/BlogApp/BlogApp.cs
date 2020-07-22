@@ -7,7 +7,7 @@ namespace BlogApp
 {
     public class BlogManager
     {
-        public Blog SelectedCustomer { get; set; }
+        public Blog SelectedBlog { get; set; }
         public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
@@ -49,17 +49,11 @@ namespace BlogApp
         }
 
         //Delete
-        public void Delete(string userInput)
+        public void Delete()
         {
             using (var db = new BloggingContext())
             {
-                Console.WriteLine("Delete the blog");
-                var blog = db.Blogs.First();
-                //var blogs =
-                //    from blog in db.Blogs.Where(b => b.Url.Equals($"{userInput}"))
-                //    select blog;
-                //string toDelete = blog.Url.Equals($"{userInput}").ToString();
-                db.Remove(blog);
+                db.Remove(SelectedBlog);
                 db.SaveChanges();
             }
         }
@@ -86,9 +80,30 @@ namespace BlogApp
             }
         }
 
-        public void SetSelectedCustomer(object selectedItem)
+        public void Edit(string url)
         {
-            SelectedCustomer = (Blog)selectedItem;
+            using (var db = new BloggingContext())
+            {
+                Console.WriteLine("Updating the blog and adding a post");
+                var blog = db.Blogs.First();
+                //var blogs =
+                //    from blog in db.Blogs
+                //    join post in db.Posts on blog.BlogId equals post.BlogId
+                //    select blog;
+                blog.Url = url;
+                //blog.Posts.Add(
+                //    new Post
+                //    {
+                //        Title = title,
+                //        Content = content
+                //    });
+                db.SaveChanges();
+            }
+        }
+
+        public void SetSelectedBlogs(object selectedItem)
+        {
+            SelectedBlog = (Blog)selectedItem;
         }
     }
 }
