@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CodeFromNorthwindApp.AlphabeticalListOfProducts" Collapsed="true">
+    <Position X="8.25" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>MEAAAAAAAAAAAgAAAAAAQAAAACEAAAAAAAAAAAgoAAA=</HashCode>
+      <FileName>AlphabeticalListOfProducts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.Categories">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAgAgAAAAAAAAAAACAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Categories.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Products" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.CategorySalesFor1997" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CategorySalesFor1997.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.CurrentProductList" Collapsed="true">
+    <Position X="10.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>CurrentProductList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.CustomerAndSuppliersByCity" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAIAAAgAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>CustomerAndSuppliersByCity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.CustomerCustomerDemo" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgEAEAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>CustomerCustomerDemo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.CustomerDemographics" Collapsed="true">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>CustomerDemographics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.Customers">
+    <Position X="0.5" Y="5.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAQAAAgAAAAAAMIAAgAAAAAAIAABACAAACIAAEAAA=</HashCode>
+      <FileName>ClassCustomisations\CustomerCust.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Orders" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.Employees">
+    <Position X="3.5" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAEgAEAAoAAAAGRIIAAAAAQAACIAAYACAIAAAAgCAAg=</HashCode>
+      <FileName>Employees.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Orders" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.EmployeeTerritories" Collapsed="true">
+    <Position X="12.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEgCAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>EmployeeTerritories.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.Invoices" Collapsed="true">
+    <Position X="10.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>OAAAAABAgAAAAAEIICAAICABQAIEAhBCAgAEgAAIACA=</HashCode>
+      <FileName>Invoices.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.NorthwindContext" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEKAEkAgwQYBIAIAJAAAIEAGABAkAAAEAAAAGAEABQ=</HashCode>
+      <FileName>NorthwindContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.OrderDetails">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAECAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAgAAAAAA=</HashCode>
+      <FileName>OrderDetails.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Order" />
+      <Property Name="Product" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.OrderDetailsExtended" Collapsed="true">
+    <Position X="14.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAgAAgAAIAAA=</HashCode>
+      <FileName>OrderDetailsExtended.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.Orders">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>GAEAAABAAAAIAAAAABAAICABCAAEAhBAAAAEAAACACA=</HashCode>
+      <FileName>Orders.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Customer" />
+      <Property Name="Employee" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="OrderDetails" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.OrdersQry" Collapsed="true">
+    <Position X="10.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GAAAQABAgAAAAAAIIAAAICABAAIEAhBCAAAEAAACACA=</HashCode>
+      <FileName>OrdersQry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.OrderSubtotals" Collapsed="true">
+    <Position X="6.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OrderSubtotals.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.Products">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MEAAAAAAAAAAAoAAABAAQAAAAAEAAAAAAAAAAAgoCAA=</HashCode>
+      <FileName>Products.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Category" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.ProductsAboveAveragePrice" Collapsed="true">
+    <Position X="13.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>ProductsAboveAveragePrice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.ProductSalesFor1997" Collapsed="true">
+    <Position X="11.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAgAAAAAAAAIAAA=</HashCode>
+      <FileName>ProductSalesFor1997.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.ProductsByCategory" Collapsed="true">
+    <Position X="8.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAgoAAA=</HashCode>
+      <FileName>ProductsByCategory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.Program" Collapsed="true">
+    <Position X="6.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.QuarterlyOrders" Collapsed="true">
+    <Position X="8.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAIAAAAAAAAAAIAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>QuarterlyOrders.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.Region" Collapsed="true">
+    <Position X="11" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAABAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Region.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.SalesByCategory" Collapsed="true">
+    <Position X="12.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAACAAAAgAAAAAAAAIAAA=</HashCode>
+      <FileName>SalesByCategory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.SalesTotalsByAmount" Collapsed="true">
+    <Position X="11.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAQAAAAAAAAAAAAAAAAAAAAAAAAABBAAAAAAAAAAA=</HashCode>
+      <FileName>SalesTotalsByAmount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.Shippers" Collapsed="true">
+    <Position X="10.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAQAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Shippers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.SummaryOfSalesByQuarter" Collapsed="true">
+    <Position X="8.25" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAEAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>SummaryOfSalesByQuarter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.SummaryOfSalesByYear" Collapsed="true">
+    <Position X="8.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAEAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>SummaryOfSalesByYear.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.Suppliers" Collapsed="true">
+    <Position X="6.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAEgAAAAAAIIAAgAAAAAAIAAAACAAACIAAgAAQ=</HashCode>
+      <FileName>Suppliers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeFromNorthwindApp.Territories" Collapsed="true">
+    <Position X="12" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAgAAAAAAIAAAAAAUAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Territories.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

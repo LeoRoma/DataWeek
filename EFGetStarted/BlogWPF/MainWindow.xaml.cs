@@ -36,7 +36,7 @@ namespace BlogWPF
             _bm.Add(userInput);
             MyTextBox.Clear();
             ListBoxBlogs.ItemsSource = _bm.ReadBlog();
-            ListBoxPosts.ItemsSource = _bm.ReadPost();
+            //ListBoxPosts.ItemsSource = _bm.ReadPost();
         }
 
         private void ButtonDelete_Click(object sender, RoutedEventArgs e)
@@ -49,7 +49,7 @@ namespace BlogWPF
         private void PopulateListBox()
         {
             ListBoxBlogs.ItemsSource = _bm.ReadBlog();
-            ListBoxPosts.ItemsSource = _bm.ReadPost();
+            //ListBoxPosts.ItemsSource = _bm.ReadPost();
         }
 
         private void ListBoxBlogs_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
@@ -87,7 +87,7 @@ namespace BlogWPF
             _bm.Edit(userInput);
             MyTextBox.Clear();
             ListBoxBlogs.ItemsSource = _bm.ReadBlog();
-            ListBoxBlogs.ItemsSource = _bm.ReadPost();
+            //ListBoxBlogs.ItemsSource = _bm.ReadPost();
         }
     }
 }

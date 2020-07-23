@@ -2,6 +2,7 @@
 using EFGetStarted;
 using System.Linq;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace BlogApp
 {
@@ -25,30 +26,31 @@ namespace BlogApp
         }
 
         //ReadPost
-        public List<Post> ReadPost()
-        {
-            using (var db = new BloggingContext())
-            {
-                List<Post> blogList = new List<Post>();
-                var blogs =
-                   (from blog in db.Blogs.OrderBy(b => b.BlogId)
-                    join post in db.Posts on blog.BlogId equals post.BlogId
-                    select post).ToList();
-                return blogs;
-            }
-        }
+        //public List<Post> ReadPost()
+        //{
+        //    using (var db = new BloggingContext())
+        //    {
+        //        List<Post> blogList = new List<Post>();
+        //        var blogs =
+        //           (from blog in db.Blogs.OrderBy(b => b.BlogId)
+        //            join post in db.Posts on blog.BlogId equals post.BlogId
+        //            select post).ToList();
+        //        return blogs;
+        //    }
+        //}
 
         //Read Blog
         public List<Blog> ReadBlog()
         {
             using (var db = new BloggingContext())
             {
+                var blog = db.Blogs.Include(p => p.Posts).ToList();
                 List<Post> blogList = new List<Post>();
-                var blogs =
-                   (from blog in db.Blogs.OrderBy(b => b.BlogId)
-                    join post in db.Posts on blog.BlogId equals post.BlogId
-                    select blog).ToList();
-                return blogs;
+                //var blogs =
+                //   (from blog in db.Blogs.OrderBy(b => b.BlogId)
+                //    //join post in db.Posts on blog.BlogId equals post.BlogId
+                //    select blog).ToList();
+                return blog;
             }
         }
 

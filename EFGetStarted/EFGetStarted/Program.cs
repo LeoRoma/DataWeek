@@ -38,10 +38,12 @@ namespace EFGetStarted
             //    db.Remove(blog);
             //    db.SaveChanges();
             //}
-
+            //Add("Hello");
+            //Add("Hi");
             //Add("http://h1.com");
             //Update("http://h1.com", "Hello", "How are you");
-            Read();
+            //Update("Hi", "I am fine", "Thanks");
+            //Read();
 
         }
         //Create
@@ -81,12 +83,7 @@ namespace EFGetStarted
             using (var db = new BloggingContext())
             {
                 Console.WriteLine("Updating the blog and adding a post");
-                var blog = db.Blogs.First();
-                //var blogs =
-                //    from blog in db.Blogs
-                //    join post in db.Posts on blog.BlogId equals post.BlogId
-                //    select blog;
-                blog.Url = userInput;
+                var blog = db.Blogs.Where(b => b.Url.Equals(userInput)).FirstOrDefault();
                 blog.Posts.Add(
                     new Post
                     {
