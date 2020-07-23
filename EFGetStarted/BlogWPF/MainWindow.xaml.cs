@@ -42,7 +42,6 @@ namespace BlogWPF
         private void ButtonDelete_Click(object sender, RoutedEventArgs e)
         {
             _bm.Delete();
-            MyTextBox.Clear();
             ListBoxBlogs.ItemsSource = _bm.ReadBlog();
         }
 
