@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -62,16 +63,16 @@ namespace EFGetStarted
             using (var db = new BloggingContext())
             {
                 Console.WriteLine("Querying for a blog");
-                var blogs =
-                    from blog in db.Blogs.OrderBy(b => b.BlogId)
-                    join post in db.Posts on blog.BlogId equals post.BlogId
-                    select new { blogUrl = blog.Url, postTitle = post.Title, postContent = post.Content };
+                var blogs = db.Blogs.Include(p => p.Posts);
+                    //from blog in db.Blogs.OrderBy(b => b.BlogId)
+                    //join post in db.Posts on blog.BlogId equals post.BlogId
+                    //select new { blogUrl = blog.Url, postTitle = post.Title, postContent = post.Content };
                 //var blog = db.Blogs
                 //    .OrderBy(b => b.BlogId)
                 //    .First();
                 foreach(var blog in blogs)
                 {
-                    Console.WriteLine($"{blog.blogUrl}, {blog.postTitle}, {blog.postContent}");
+                    Console.WriteLine($"{blog.Url}");
                 }
                 
             }

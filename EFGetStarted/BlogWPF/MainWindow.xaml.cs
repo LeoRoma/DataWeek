@@ -39,7 +39,7 @@ namespace BlogWPF
             //ListBoxPosts.ItemsSource = _bm.ReadPost();
         }
 
-        private void ButtonDelete_Click(object sender, RoutedEventArgs e)
+        private void ButtonDeleteBlog_Click(object sender, RoutedEventArgs e)
         {
             _bm.Delete();
             ListBoxBlogs.ItemsSource = _bm.ReadBlog();
@@ -48,7 +48,7 @@ namespace BlogWPF
         private void PopulateListBox()
         {
             ListBoxBlogs.ItemsSource = _bm.ReadBlog();
-            ListBoxPosts.ItemsSource = _bm.ReadBlog();
+           
         }
 
         private void ListBoxBlogs_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
@@ -56,19 +56,30 @@ namespace BlogWPF
             if (ListBoxBlogs.SelectedItem != null)
             {
                 _bm.SetSelectedBlogs(ListBoxBlogs.SelectedItem);
-                PopulateCustomerFields();
+                PopulatePost();
             }
         }
 
         private void ListBoxPosts_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            if (ListBoxBlogs.SelectedItem != null)
+            if (ListBoxPosts.SelectedItem != null)
             {
-                _bm.SetSelectedBlogs(ListBoxBlogs.SelectedItem);
-                PopulateCustomerFields();
+                _bm.SetSelectedPosts(ListBoxPosts.SelectedItem);
+                PopulatePost();
             }
         }
-        private void PopulateCustomerFields()
+
+        private void ButtonEditBlog_Click(object sender, RoutedEventArgs e)
+        {
+            string userInput = MyTextBox.Text;
+            _bm.Edit(userInput);
+            MyTextBox.Clear();
+            
+            ListBoxBlogs.SelectedItem = _bm.SelectedBlog;
+            ListBoxBlogs.ItemsSource = _bm.ReadBlog();
+        }
+
+        private void PopulatePost()
         {
             if (_bm.SelectedBlog != null)
             {
@@ -77,16 +88,25 @@ namespace BlogWPF
                 //TextCity.Text = _crudManager.SelectedCustomer.City;
                 //TextPostalCode.Text = _crudManager.SelectedCustomer.PostalCode;
                 //TextCountry.Text = _crudManager.SelectedCustomer.Country;
+                ListBoxPosts.ItemsSource = _bm.ReadPost(_bm.SelectedBlog.BlogId);
             }
         }
 
-        private void ButtonEdit_Click(object sender, RoutedEventArgs e)
+        private void ButtonAddPost_Click(object sender, RoutedEventArgs e)
         {
-            string userInput = MyTextBox.Text;
-            _bm.Edit(userInput);
+            string userTitle = PostTitle.Text;
+            string userContent = PostContent.Text;
+            _bm.Update(userTitle, userContent);
             MyTextBox.Clear();
-            ListBoxBlogs.ItemsSource = _bm.ReadBlog();
-            //ListBoxBlogs.ItemsSource = _bm.ReadPost();
+
+            ListBoxBlogs.SelectedItem = _bm.SelectedBlog;
+            ListBoxPosts.ItemsSource = _bm.ReadPost(_bm.SelectedBlog.BlogId);
+        }
+
+        private void ButtonDeletePost_Click(object sender, RoutedEventArgs e)
+        {
+            _bm.DeletePost(_bm.SelectedPost.PostId);
+            PopulatePost();
         }
     }
 }

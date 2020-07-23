@@ -9,6 +9,7 @@ namespace BlogApp
     public class BlogManager
     {
         public Blog SelectedBlog { get; set; }
+        public Post SelectedPost { get; set; }
         public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
@@ -25,20 +26,6 @@ namespace BlogApp
             }
         }
 
-        //ReadPost
-        //public List<Post> ReadPost()
-        //{
-        //    using (var db = new BloggingContext())
-        //    {
-        //        List<Post> blogList = new List<Post>();
-        //        var blogs =
-        //           (from blog in db.Blogs.OrderBy(b => b.BlogId)
-        //            join post in db.Posts on blog.BlogId equals post.BlogId
-        //            select post).ToList();
-        //        return blogs;
-        //    }
-        //}
-
         //Read Blog
         public List<Blog> ReadBlog()
         {
@@ -46,6 +33,15 @@ namespace BlogApp
             {
                 var blog = db.Blogs.Include(p => p.Posts).ToList();
                 return blog;
+            }
+        }
+
+        public List<Post> ReadPost(int blogId)
+        {
+            using (var db = new BloggingContext())
+            {
+                var post = db.Posts.Where(b => b.BlogId == blogId).ToList();
+                return post;
             }
         }
 
@@ -59,18 +55,23 @@ namespace BlogApp
             }
         }
 
-        //Update
-        public static void Update(string userInput, string title, string content)
+        public void DeletePost(int postId)
         {
             using (var db = new BloggingContext())
             {
-                Console.WriteLine("Updating the blog and adding a post");
-                var blog = db.Blogs.First();
-                //var blogs =
-                //    from blog in db.Blogs
-                //    join post in db.Posts on blog.BlogId equals post.BlogId
-                //    select blog;
-                blog.Url = userInput;
+                var post = db.Posts.Where(p => p.PostId == postId).FirstOrDefault();
+                db.Posts.Remove(post);
+                db.SaveChanges();
+            }
+        }
+
+        //Update
+        public void Update(string title, string content)
+        {
+            using (var db = new BloggingContext())
+            {
+                var blog = db.Blogs.Where(b => b.BlogId == SelectedBlog.BlogId).Include(p => p.Posts).FirstOrDefault();
+
                 blog.Posts.Add(
                     new Post
                     {
@@ -85,19 +86,8 @@ namespace BlogApp
         {
             using (var db = new BloggingContext())
             {
-                Console.WriteLine("Updating the blog and adding a post");
-                var blog = db.Blogs.First();
-                //var blogs =
-                //    from blog in db.Blogs
-                //    join post in db.Posts on blog.BlogId equals post.BlogId
-                //    select blog;
+                Blog blog = db.Blogs.Where(b => b.BlogId == SelectedBlog.BlogId).FirstOrDefault();
                 blog.Url = url;
-                //blog.Posts.Add(
-                //    new Post
-                //    {
-                //        Title = title,
-                //        Content = content
-                //    });
                 db.SaveChanges();
             }
         }
@@ -105,6 +95,11 @@ namespace BlogApp
         public void SetSelectedBlogs(object selectedItem)
         {
             SelectedBlog = (Blog)selectedItem;
+        }
+
+        public void SetSelectedPosts(object selectedItem)
+        {
+            SelectedPost = (Post)selectedItem;
         }
     }
 }

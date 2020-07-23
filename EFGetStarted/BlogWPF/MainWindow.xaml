@@ -11,8 +11,12 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
@@ -24,33 +28,48 @@
 
         <!--Header-->
         <Label x:Name="LabelHeader" Content="Blog Manager" FontWeight="Bold" FontSize="35"
-               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalContentAlignment="Center"
+               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" HorizontalContentAlignment="Center"
                VerticalContentAlignment="Center" Background="DarkOrange" />
         
         <!--ListBoxBlogs-->
-        <Label Content="Blogs:" Margin="5" Grid.Row="2" FontSize="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <ListBox x:Name="ListBoxBlogs" Background="Beige" FontSize="20"  Grid.Row="3" Grid.Column="0" Grid.RowSpan="3" SelectionChanged="ListBoxBlogs_SelectionChanged">
+        <Label Content="Blogs:" Margin="5" Grid.Row="2" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <ListBox x:Name="ListBoxBlogs" Background="Beige" FontSize="20"  Grid.Row="3" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="2" SelectionChanged="ListBoxBlogs_SelectionChanged">
         </ListBox>
         
         <!--ListBoxPosts-->
-        <Label Content="Posts:" Margin="5" Grid.Row="2" Grid.Column="1" FontSize="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <ListBox x:Name="ListBoxPosts" Background="Beige" FontSize="20" Grid.Row="3" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="3" SelectionChanged="ListBoxPosts_SelectionChanged">
+        <Label Content="Posts:" Margin="5" Grid.Row="2" Grid.Column="3" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <ListBox x:Name="ListBoxPosts" Background="Beige" FontSize="20" Grid.Row="3" Grid.Column="3" Grid.RowSpan="3" Grid.ColumnSpan="2" SelectionChanged="ListBoxPosts_SelectionChanged">
         </ListBox>
 
-        <!--TextBox-->
-        <Label Content="Enter a blog:" Margin="5" Grid.Row="1" FontSize="30"/>
+        <!--TextBoxBlog-->
+        <Label Content="Enter a blog:" Margin="5" Grid.Row="1" FontSize="20"/>
         <TextBox Grid.Row="1" Grid.Column="1" Name="MyTextBox" Margin="5" FontSize="25"/>
 
         <!--Button Add-->
         <Button x:Name="ButtonAdd" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1" Background="DarkKhaki" FontWeight="Bold" FontSize="35" Content="Add"
                VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ButtonAdd_Click" />
        
-        <!--Button Delete-->
-        <Button x:Name="ButtonDelete" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="1" Background="DarkGoldenrod" FontWeight="Bold" FontSize="35" Content="Delete"
-               VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ButtonDelete_Click" />
+        <!--Button Delete Blog-->
+        <Button x:Name="ButtonDeleteBlog" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="1" Background="DarkGoldenrod" FontWeight="Bold" FontSize="25" Content="Delete Blog"
+               VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ButtonDeleteBlog_Click" />
         
-        <!--Button Update-->
-        <Button x:Name="ButtonEdit" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="1" Background="DarkKhaki" FontWeight="Bold" FontSize="35" Content="Edit"
-               VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ButtonEdit_Click" />
+        <!--Button Edit Blog-->
+        <Button x:Name="ButtonEditBlog" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="1" Background="DarkKhaki" FontWeight="Bold" FontSize="25" Content="Edit Blog"
+               VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ButtonEditBlog_Click" />
+
+        <!--TextBoxPost-->
+        <Label Content="Title:" Margin="5" Grid.Row="6" Grid.Column="3" FontSize="25"/>
+        <TextBox Grid.Row="6" Grid.Column="6" Name="PostTitle" Margin="5" FontSize="25"/>
+
+        <Label Content="Content:" Margin="5" Grid.Row="7" Grid.Column="3" FontSize="25"/>
+        <TextBox Grid.Row="7" Grid.Column="7" Name="PostContent" Margin="5" FontSize="25"/>
+
+        <!--Button Delete Post-->
+        <Button x:Name="ButtonDeletePost" Grid.Row="8" Grid.Column="4" Grid.ColumnSpan="1" Background="DarkGoldenrod" FontWeight="Bold" FontSize="20" Content="Delete Post"
+               VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ButtonDeletePost_Click" />
+
+        <!--Button Update Post-->
+        <Button x:Name="ButtonUpdatePost" Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="1" Background="DarkKhaki" FontWeight="Bold" FontSize="20" Content="Update Post"
+               VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ButtonAddPost_Click" />
     </Grid>
 </Window>

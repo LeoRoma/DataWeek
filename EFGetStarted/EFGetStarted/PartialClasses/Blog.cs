@@ -16,7 +16,7 @@ namespace EFGetStarted
     {
         public override string ToString()
         {
-            return $"{Title}: {Content}";
+            return $"{PostId}: {Title} {Content}";
         }
     }
 }
