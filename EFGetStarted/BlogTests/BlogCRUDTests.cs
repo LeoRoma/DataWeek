@@ -18,10 +18,25 @@ namespace BlogTests
         [Test]
         public void ReadFromBlogClass()
         {
-            List<Blog> result = new List<Blog>() { new Blog() { BlogId = 59, Url = "Hey" } };
+            List<Blog> result = new List<Blog>() { new Blog() { BlogId = 68, Url = "Hola" } };
     
             var actual = _blogManager.ReadBlog();
-            Assert.AreEqual(result[0], actual[0]);
+            Assert.AreEqual(result[0].BlogId, 68);
+            Assert.AreEqual(result[0].Url, "Hola");
+        }
+
+        [Test]
+        public void AddABlog()
+        {
+            // arrange
+            var count = _blogManager.ReadBlog().Count;
+            // act
+            _blogManager.Add("Hello");
+            // assert
+            var newCount = _blogManager.ReadBlog().Count;
+            Assert.AreEqual(count + 1, newCount);
+            // restore
+            //*blogManager.Delete("Hello");  */       
         }
     }
 }

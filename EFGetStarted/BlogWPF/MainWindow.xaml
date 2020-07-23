@@ -69,7 +69,7 @@
                VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ButtonDeletePost_Click" />
 
         <!--Button Update Post-->
-        <Button x:Name="ButtonUpdatePost" Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="1" Background="DarkKhaki" FontWeight="Bold" FontSize="20" Content="Update Post"
+        <Button x:Name="ButtonUpdatePost" Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="1" Background="DarkKhaki" FontWeight="Bold" FontSize="20" Content="Add Post"
                VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ButtonAddPost_Click" />
     </Grid>
 </Window>
