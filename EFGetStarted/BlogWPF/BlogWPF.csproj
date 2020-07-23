@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BlogApp\BlogApp.csproj" />
+    <ProjectReference Include="..\EFGetStarted\EFGetStarted.csproj" />
   </ItemGroup>
 
 </Project>

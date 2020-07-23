@@ -48,7 +48,7 @@ namespace BlogWPF
         private void PopulateListBox()
         {
             ListBoxBlogs.ItemsSource = _bm.ReadBlog();
-            //ListBoxPosts.ItemsSource = _bm.ReadPost();
+            ListBoxPosts.ItemsSource = _bm.ReadBlog();
         }
 
         private void ListBoxBlogs_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)

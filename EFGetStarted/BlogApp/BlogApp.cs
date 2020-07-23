@@ -45,11 +45,6 @@ namespace BlogApp
             using (var db = new BloggingContext())
             {
                 var blog = db.Blogs.Include(p => p.Posts).ToList();
-                List<Post> blogList = new List<Post>();
-                //var blogs =
-                //   (from blog in db.Blogs.OrderBy(b => b.BlogId)
-                //    //join post in db.Posts on blog.BlogId equals post.BlogId
-                //    select blog).ToList();
                 return blog;
             }
         }

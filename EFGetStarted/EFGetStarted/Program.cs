@@ -43,7 +43,7 @@ namespace EFGetStarted
             //Add("http://h1.com");
             //Update("http://h1.com", "Hello", "How are you");
             //Update("Hi", "I am fine", "Thanks");
-            //Read();
+            Read();
 
         }
         //Create
